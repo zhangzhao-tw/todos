@@ -4,17 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'build.bat'
+                echo 'Building...'
+                bat 'auto/build.bat'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
+                bat 'auto/test.bat'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
+                bat 'auto/deploy.bat'
             }
         }
     }
